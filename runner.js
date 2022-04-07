@@ -174,11 +174,12 @@ function uploadImage() {
             .then(function (json) {
                 if (json.length !== 0) {
 
+                    var newText = c.quoteText.replace('<br/>'," ").replace("  "," ")+"\r"+"  - @"+c.userName+"\r\r"
                     c.url = c.url + c.articleURL;
                     c.url = c.url + "&text=";
-                    c.url = c.url + encodeURI(c.quoteText)
+                    c.url = c.url + encodeURI(newText)
 
-                    var markdown = "[![Click to Tweet: " + c.quoteText + "](" + json.links[0] + ")](" + c.url + ")";
+                    var markdown = "[![Click to Tweet: " + newText + "](" + json.links[0] + ")](" + c.url + ")";
 
                     copyToClipboard(markdown);
 
