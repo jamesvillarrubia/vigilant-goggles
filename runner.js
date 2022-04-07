@@ -44,9 +44,9 @@ make_bg();
 function make_bg()
 {
     var selectedText = getSelectedText();
-    if (selectedText.length > 0) {
-        c.quoteText = '"' + selectedText + '"';
-    }
+    // if (selectedText.length > 0) {
+    //     c.quoteText = '"' + selectedText + '"';
+    // }
 
     var charCount = c.quoteText.length + c.articleURL.length + c.userName.length + 10;
     if (charCount > c.textMaxCharCount) {
@@ -109,6 +109,9 @@ function draw() {
         image = img;
         uploadImage();
     }, 'image/jpg');
+
+
+    document.body.appendChild(c.canvas)
 
 }
 
@@ -173,7 +176,7 @@ function uploadImage() {
 
                     c.url = c.url + c.articleURL;
                     c.url = c.url + "&text=";
-                    c.url = c.url + encodeURI(c.quoteText + " - @" + c.userName + " ");
+                    c.url = c.url + encodeURI(c.quoteText)
 
                     var markdown = "[![Click to Tweet: " + c.quoteText + "](" + json.links[0] + ")](" + c.url + ")";
 
