@@ -175,6 +175,7 @@ function uploadImage() {
                 if (json.length !== 0) {
 
                     var newText = c.quoteText.replace('<br/>'," ").replace("  "," ")+"\r"+"  - @"+c.userName+"\r\r"
+                    console.log(newText)
                     c.url = c.url + c.articleURL;
                     c.url = c.url + "&text=";
                     c.url = c.url + encodeURI(newText)
