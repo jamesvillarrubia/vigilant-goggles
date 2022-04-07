@@ -19,7 +19,7 @@ function init(config) {
     config.lineHeight = config.lineHeight || config.fontSize * config.lineHeightAdjust;
     config.url = config.url || "https://twitter.com/intent/tweet?url=";
     config.textX = config.textX || 215;
-    config.textY = config.textY || 300;
+    config.textY = config.textY || 280;
     config.textMaxWidth = config.textMaxWidth || 1040;
     config.textMaxHeight = config.textMaxHeight || 370;
     config.textMaxCharCount = config.textMaxCharCount || 320;
@@ -174,13 +174,13 @@ function uploadImage() {
             .then(function (json) {
                 if (json.length !== 0) {
 
-                    var newText = c.quoteText.replace('<br/>'," ").replace("  "," ")+"\r"+"  - @"+c.userName+"\r\r"
+                    var newText = c.quoteText.replaceAll('<br/>'," ").replaceAll("  "," ")+"\r"+"  - @"+c.userName+"\r\r"
                     console.log(newText)
                     c.url = c.url + c.articleURL;
                     c.url = c.url + "&text=";
                     c.url = c.url + encodeURI(newText)
 
-                    var markdown = "[![Click to Tweet: " + newText + "](" + json.links[0] + ")](" + c.url + ")";
+                    var markdown = "[![Click to Tweet: " + newText + "- @"+c.userName + "](" + json.links[0] + ")](" + c.url + ")";
 
                     copyToClipboard(markdown);
 
