@@ -9,7 +9,7 @@ function init(config) {
 
     config = config || [];
     config.userName = config.userName || "james_mtc";
-    config.backgroundImageURL = config.backgroundImageURL || 'https://jamesvillarrubia.github.io/vigilant-goggles/empty_bg_devto.png';
+    config.backgroundImageURL = config.backgroundImageURL || 'https://jamesvillarrubia.github.io/vigilant-goggles/docs/assets/empty_bg_devto.png';
     config.quoteText = config.quoteText || "Standard Text if you don't select anything";
     config.articleURL = config.articleURL || "https://dev.to/inhuofficial/click-to-tweet-a-great-way-to-increase-traffic-generator-for-dev-to-5h49";
     config.fontSize = config.fontSize || 44;
