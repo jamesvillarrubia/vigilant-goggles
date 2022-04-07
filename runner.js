@@ -12,8 +12,9 @@ function init(config) {
     config.backgroundImageURL = config.backgroundImageURL || 'https://jamesvillarrubia.github.io/vigilant-goggles/docs/assets/empty_bg_devto.png';
     config.quoteText = config.quoteText || "Standard Text if you don't select anything";
     config.articleURL = config.articleURL || "https://dev.to/inhuofficial/click-to-tweet-a-great-way-to-increase-traffic-generator-for-dev-to-5h49";
-    config.fontSize = config.fontSize || 44;
-    config.fontFamily = config.fontFamily || "Century Gothic";
+    config.fontSize = config.fontSize || 46;
+    config.fontFamily = config.fontFamily || "SF Mono";
+    config.color = config.color || "#cccccc";
     config.lineHeightAdjust = config.lineHeightAdjust || 1.2;
     config.lineHeight = config.lineHeight || config.fontSize * config.lineHeightAdjust;
     config.url = config.url || "https://twitter.com/intent/tweet?url=";
@@ -91,7 +92,7 @@ function draw() {
     c.ctx.font = c.fontSize + 'px ' + c.fontFamily;
     var lines = getLines(c.ctx, c.quoteText, c.textMaxWidth);
     c.linesHeightTotal = lines.length * c.lineHeight;
-    c.ctx.fillStyle = "#222222";
+    c.ctx.fillStyle = c.color;
     c.ctx.textAlign = "start";
     c.ctx.font = c.fontSize + 'px ' + c.fontFamily;
     var y = c.textY + (c.textMaxHeight / 2) - (c.linesHeightTotal / 2);
@@ -112,6 +113,10 @@ function draw() {
 }
 
 function getLines(ctx, text, maxWidth) {
+    if(text.split("<br/>").length > 1){
+        lines = text.split("<br/>")
+        return lines;
+    }
     var words = text.split(" ");
     var lines = [];
     var currentLine = words[0];
