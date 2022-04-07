@@ -3,7 +3,7 @@ function init(config) {
 
     var canvas = document.createElement('canvas');
     canvas.width = 1400;
-    canvas.height = 950;
+    canvas.height = 900;
     document.querySelector('main').appendChild(canvas);
 
 
