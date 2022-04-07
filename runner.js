@@ -174,11 +174,11 @@ function uploadImage() {
             .then(function (json) {
                 if (json.length !== 0) {
 
-                    var newText = c.quoteText.replaceAll('<br/>'," ").replaceAll("  "," ")+"\r"+"  - @"+c.userName+"\r\r"
+                    var newText = c.quoteText.replaceAll('<br/>'," ").replaceAll("  "," ")
                     console.log(newText)
                     c.url = c.url + c.articleURL;
                     c.url = c.url + "&text=";
-                    c.url = c.url + encodeURI(newText)
+                    c.url = c.url + encodeURI(newText+"\r"+"  - @"+c.userName+"\r\r")
 
                     var markdown = "[![Click to Tweet: " + newText + "- @"+c.userName + "](" + json.links[0] + ")](" + c.url + ")";
 
