@@ -11,7 +11,7 @@ function init(config) {
     config.userName = config.userName || "james_mtc";
     config.backgroundImageURL = config.backgroundImageURL || 'https://jamesvillarrubia.github.io/vigilant-goggles/docs/assets/empty_bg_devto.png';
     config.quoteText = config.quoteText || "Standard Text if you don't select anything";
-    config.articleURL = config.articleURL || "https://dev.to/inhuofficial/click-to-tweet-a-great-way-to-increase-traffic-generator-for-dev-to-5h49";
+    config.articleURL = config.articleURL || "";
     config.fontSize = config.fontSize || 46;
     config.fontFamily = config.fontFamily || "'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace";
     config.color = config.color || "#cccccc";
@@ -28,7 +28,7 @@ function init(config) {
     config.ctx = config.canvas.getContext('2d');
     config.width = config.width || config.canvas.width;
     config.height = config.height || config.canvas.height;
-    config.adjustFontSize = config.adjustFontSize || true;
+    config.adjustFontSize = config.adjustFontSize || false;
     config.textAreaName = 'article_body_markdown';
     config.textArea = document.querySelector('#' + config.textAreaName);
     config.grabCurrentURL = config.grabCurrentURL || true;
@@ -44,9 +44,9 @@ make_bg();
 function make_bg()
 {
     var selectedText = getSelectedText();
-    // if (selectedText.length > 0) {
-    //     c.quoteText = '"' + selectedText + '"';
-    // }
+    if (selectedText.length > 0) {
+        c.quoteText = selectedText;
+    }
 
     var charCount = c.quoteText.length + c.articleURL.length + c.userName.length + 10;
     if (charCount > c.textMaxCharCount) {
