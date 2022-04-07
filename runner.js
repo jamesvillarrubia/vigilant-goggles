@@ -18,7 +18,7 @@ function init(config) {
     config.lineHeightAdjust = config.lineHeightAdjust || 1.2;
     config.lineHeight = config.lineHeight || config.fontSize * config.lineHeightAdjust;
     config.url = config.url || "https://twitter.com/intent/tweet?url=";
-    config.textX = config.textX || 240;
+    config.textX = config.textX || 215;
     config.textY = config.textY || 300;
     config.textMaxWidth = config.textMaxWidth || 1040;
     config.textMaxHeight = config.textMaxHeight || 370;
