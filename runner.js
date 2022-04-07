@@ -12,14 +12,14 @@ function init(config) {
     config.backgroundImageURL = config.backgroundImageURL || 'https://jamesvillarrubia.github.io/vigilant-goggles/docs/assets/empty_bg_devto.png';
     config.quoteText = config.quoteText || "Standard Text if you don't select anything";
     config.articleURL = config.articleURL || "";
-    config.fontSize = config.fontSize || 46;
+    config.fontSize = config.fontSize || 50;
     config.fontFamily = config.fontFamily || "'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace";
     config.color = config.color || "#cccccc";
     config.lineHeightAdjust = config.lineHeightAdjust || 1.2;
     config.lineHeight = config.lineHeight || config.fontSize * config.lineHeightAdjust;
     config.url = config.url || "https://twitter.com/intent/tweet?url=";
     config.textX = config.textX || 240;
-    config.textY = config.textY || 340;
+    config.textY = config.textY || 300;
     config.textMaxWidth = config.textMaxWidth || 1040;
     config.textMaxHeight = config.textMaxHeight || 370;
     config.textMaxCharCount = config.textMaxCharCount || 320;
