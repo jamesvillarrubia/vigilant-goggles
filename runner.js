@@ -13,7 +13,7 @@ function init(config) {
     config.quoteText = config.quoteText || "Standard Text if you don't select anything";
     config.articleURL = config.articleURL || "https://dev.to/inhuofficial/click-to-tweet-a-great-way-to-increase-traffic-generator-for-dev-to-5h49";
     config.fontSize = config.fontSize || 46;
-    config.fontFamily = config.fontFamily || "SF Mono";
+    config.fontFamily = config.fontFamily || "'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace";
     config.color = config.color || "#cccccc";
     config.lineHeightAdjust = config.lineHeightAdjust || 1.2;
     config.lineHeight = config.lineHeight || config.fontSize * config.lineHeightAdjust;
